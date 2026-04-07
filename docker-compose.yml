@@ -1,0 +1,31 @@
+name: vlr-toolkit-services
+services:
+  redis:
+    container_name: vlr-toolkit-redis
+    image: bitnami/redis:latest
+    restart: always
+    environment:
+      - REDIS_PASSWORD=example
+    ports:
+      - '6382:6379'
+    volumes: 
+      - redis:/bitnami/redis/data
+
+  mongodb:
+    container_name: vlr-toolkit-mongodb
+    image: mongo
+    ports:
+      - '27022:27017'
+    environment:
+      - MONGO_INITDB_DATABASE=vlr_toolkit
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+
+volumes:
+  redis:
+  mongodb_data:
+  mongodb_config:

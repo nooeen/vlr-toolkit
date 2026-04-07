@@ -1,0 +1,8 @@
+module.exports = {
+  apps: [
+    {
+      name: "vlr-toolkit-web",
+      script: "./dist/apps/web/main.js",
+    },
+  ],
+};
