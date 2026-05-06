@@ -40,6 +40,4 @@ node_modules
 .env.backup
 .env.cloud.backup
 ecosystem.config.js
-pnpm-lock.yaml
-package-lock.json
 node_modules
